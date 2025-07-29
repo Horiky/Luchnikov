@@ -174,7 +174,7 @@ nav a:hover::after {
 @media (max-width: 1000px) {
   h1 {
     font-size: 3rem;
-    padding-top: 5rem;
+    padding-top: 20px;
   }
   .note {
     margin-right: 0;
