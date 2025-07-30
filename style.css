@@ -2,45 +2,31 @@ body {
   background: url(./img/Fones.jpg) no-repeat center center fixed;
   background-size: cover;
   margin: 0;
-
   font-family: "Roboto", sans-serif;
   color: white;
   overflow-x: hidden;
 }
 
-h1 {
-  margin: 0;
-  color: #f8f8f8;
-  font-size: 6rem;
-  font-weight: 700;
-
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-  line-height: 1.1;
-}
-
-.names {
-  gap: 10vw;
+/* Навигация */
+.navigation {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0 5vw;
+  padding-top: 30px;
+  padding-left: 50px;
+  position: relative;
+  width: 600px;
 }
 
-.musican {
-  color: rgba(134, 134, 134, 0.9);
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  margin-top: 1rem;
-} 
-
-img {
-  width: 80%;
-
-
-
+.note {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 2rem;
+  transition: transform 0.5s ease;
 }
 
-
+.note:hover {
+  transform: rotate(360deg);
+}
 
 nav a {
   color: rgba(143, 143, 143, 0.8);
@@ -73,62 +59,25 @@ nav a:hover::after {
   width: 100%;
 }
 
-.navigation {
-  display: flex;
-  align-items: center;
-  padding-top: 30px;
-  padding-left: 50px;
-  position: relative;
-  width: 600px;
-}
-
 .home {
   font-weight: bold;
-  
 }
 
-.note {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 2rem;
-  transition: transform 0.5s ease;
+/* Заголовок */
+h1 {
+  margin: 0;
+  color: #f8f8f8;
+  font-size: 6rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
 }
 
-.note:hover {
-  transform: rotate(360deg);
-}
-
-.icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  margin: 0 1rem;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.icon:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-}
-
-.icone {
-
-  width: 4rem;
-  height: 4rem;
-  margin: 0 1rem;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  padding-bottom: 10px;
-}
-.icone:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-}
-
-.icons {
-  padding-top: 5rem;
-  display: flex;
-  justify-content: flex-start;
+.musican {
+  color: rgba(134, 134, 134, 0.9);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-top: 1rem;
 }
 
 .line {
@@ -149,64 +98,119 @@ nav a:hover::after {
   backdrop-filter: blur(5px);
 }
 
-
-@media (max-width: 1200px) {
-  h1 {
-    font-size: 4.5rem;
-  }
-  
-  .names {
-    flex-direction: column;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .icons {
-    justify-content: center;
-    padding-top: 3rem;
-  }
-  
-  img {
-    width: 80%;
-  }
+/* Основная структура */
+.names {
+  gap: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5vw;
 }
+
+.foto {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.foto img {
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Иконки для ПК */
+.desktop-icons {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Иконки для мобильных */
+.mobile-icons {
+  display: none;
+}
+
+.icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.icone {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 1rem;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  padding-bottom: 10px;
+}
+
+.icone:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
 
 @media (max-width: 1000px) {
   h1 {
     font-size: 3rem;
     padding-top: 20px;
   }
-  .note {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  
+  .names {
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
   }
   
-  nav a {
-    font-size: 1.2rem;
-  
-    color: #7c7c7c;
-  }
-  .foto{
+  .foto {
+    order: 1;
     display: flex;
     justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+
   }
-}
-@media (max-width: 900px) {
+  
+  .foto img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+    padding-right: 35px;
+  }
+  
+  .name {
+    order: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .desktop-icons {
+    display: none;
+  }
+  
+  .mobile-icons {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
   .navigation {
     width: 100%;
     padding-left: 0;
     justify-content: center;
-
-  }
-  
-  .note {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-  
-  nav {
     flex-wrap: wrap;
-    justify-content: center;
   }
   
   nav a {
@@ -217,6 +221,20 @@ nav a:hover::after {
 }
 
 @media (max-width: 480px) {
+  .foto img {
+    max-width: 100%;
+  }
+  
+  .icon, .icone {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .icone {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
   nav a {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
